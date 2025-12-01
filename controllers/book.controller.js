@@ -1,5 +1,5 @@
 'use strict';
-const Book = require('../models/book');
+const Book = require('./models/book');
 
 const getAllBooks = async (request, h) => {
     try {
