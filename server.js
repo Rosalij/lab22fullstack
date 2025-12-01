@@ -5,7 +5,7 @@ const Hapi = require('@hapi/hapi');
 const mongoose = require("mongoose");
 const routes = require('./routes'); 
 
-
+//initialize server
 const init = async () => {
 
     const server = Hapi.server({
@@ -13,14 +13,16 @@ const init = async () => {
         host: '0.0.0.0'
     });
 
+    //connect to database
 mongoose.connect(process.env.MONGO_URI).then(() => {
     console.log("Connected to database");
 }).catch((err) => {
     console.log("Database connection error: ", err);    
 });
 
-routes(server); 
 
+routes(server); 
+//test route
 server.route({
     method: 'GET',
     path: '/',
@@ -29,11 +31,11 @@ server.route({
     }
 
 });
-
+//start server
     await server.start();
     console.log('Server running on %s', server.info.uri);
 };
-
+//handle unhandled rejections
 process.on('unhandledRejection', (err) => {
 
     console.log(err);

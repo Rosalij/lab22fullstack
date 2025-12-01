@@ -1,6 +1,7 @@
 'use strict';
 const Book = require('../models/Book');
 
+// get all books
 const getAllBooks = async (request, h) => {
     try {
         const book = await Book.find();
@@ -10,7 +11,7 @@ const getAllBooks = async (request, h) => {
     }
 };
 
-// POST a new product
+//add a new book
 const addBook = async (request, h) => {
     try {
         const newBook = new Book(request.payload);
@@ -61,6 +62,7 @@ const getBookById = async (request, h) => {
     }
 }
 
+//export functions
 module.exports = {
         getAllBooks,
         addBook,
