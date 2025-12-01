@@ -18,3 +18,13 @@ It uses Hapi.js as the server framework and MongoDB with Mongoose for data stora
 | author    | String  | Book author (required)      |
 | rating    | Number  | Book rating ( required) |
 | read      | Boolean | Read status (default: true) |
+
+Getting started:
+
+git clone https://github.com/Rosalij/lab22fullstack.git
+
+npm install
+
+add .env (MONGO_URI, PORT)
+
+npm run start
