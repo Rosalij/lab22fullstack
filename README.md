@@ -20,8 +20,11 @@ It uses Hapi.js as the server framework and MongoDB with Mongoose for data stora
 | read      | Boolean | Read status (default: true) |
 
 Getting started:
+
 git clone https://github.com/Rosalij/lab22fullstack.git
 
 npm install
+
 add .env (MONGO_URI, PORT)
+
 npm run start
