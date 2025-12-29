@@ -1,5 +1,10 @@
 'use strict';
+import cors from "cors";
 
+app.use(cors({
+  origin: "https://lab22fullstack.onrender.com/books",
+
+}));
 require ('dotenv').config();
 const Hapi = require('@hapi/hapi');
 const mongoose = require("mongoose");
