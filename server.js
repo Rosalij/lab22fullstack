@@ -1,10 +1,5 @@
 'use strict';
-import cors from "cors";
 
-app.use(cors({
-  origin: "https://lab22fullstack.onrender.com/books",
-
-}));
 require ('dotenv').config();
 const Hapi = require('@hapi/hapi');
 const mongoose = require("mongoose");
@@ -15,8 +10,15 @@ const init = async () => {
 
     const server = Hapi.server({
         port: process.env.PORT || 5000,
-        host: '0.0.0.0'
-    });
+        host: '0.0.0.0',
+     routes: {
+  cors: {
+    origin: ["*"]
+  }
+}
+  });
+
+    
 
     //connect to database
 mongoose.connect(process.env.MONGO_URI).then(() => {
